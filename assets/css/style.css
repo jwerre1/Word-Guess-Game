@@ -1,7 +1,7 @@
-body {
+/* body { */
     /* photo found on pexels.com - CC0 License, free for personal and commercial use without attribution */
     /* makes background photo fit page, correctly positioned - found on Stack Overflow */
-    background: url(../images/globeBackground.jpg) no-repeat center center fixed;
+    /* background: url(../images/globeBackground.jpg) no-repeat center center fixed;
     background-color: lightslategray;
     background-size: cover;
 }
@@ -29,4 +29,4 @@ h2 {
     z-index: 2;
     position: relative;
     top: -10px;
-}
+} */
