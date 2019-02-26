@@ -1,0 +1,32 @@
+body {
+    /* photo found on pexels.com - CC0 License, free for personal and commercial use without attribution */
+    /* makes background photo fit page, correctly positioned - found on Stack Overflow */
+    background: url(../images/globeBackground.jpg) no-repeat center center fixed;
+    background-color: lightslategray;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Faster One', cursive;
+    font-size: 75px;
+    background: red;
+    background: -webkit-linear-gradient(left, rgb(255, 134, 134),red);
+    background: -o-linear-gradient(right, rgb(255, 134, 134),red);
+    background: -moz-linear-gradient(right, rgb(255, 134, 134),red);
+    background: linear-gradient(to right, rgb(255, 134, 134),red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    z-index: 1;
+}
+
+h2 {
+    font-family: 'Mogra', cursive;
+    font-size: 50px;
+    color: rgba(45, 45, 252, 0.747);
+    text-align: center;
+    transform: rotate(345deg);
+    z-index: 2;
+    position: relative;
+    top: -10px;
+}
