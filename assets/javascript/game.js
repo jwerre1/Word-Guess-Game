@@ -9,6 +9,7 @@ var letters = "";
 var a = "";
 var answers = "";
 var answerSplit = "";
+var j = "";
 // var answerSplit = []
     console.log(wins);
     console.log(loses);
@@ -53,7 +54,7 @@ function checkGuess(y) {
 }
 
 window.onload = function () {
-    var letters = countries[round].split('');
+    var letters = countries[1].split('');
         console.log(letters);
     // defines a variable as how many letters a country has
     var a = letters.length;
@@ -87,6 +88,9 @@ document.onkeyup = function(event) {
             answerSplit.splice(i, 1, userGuess);
                 console.log(answerSplit);
             document.getElementById("answer-text").innerHTML= answer;
+            answer=answerSplit.join();
+            document.getElementById("answer-text").innerHTML= answer;
+
         }
     }
 
