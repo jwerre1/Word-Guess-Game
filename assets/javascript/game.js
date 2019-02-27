@@ -4,7 +4,11 @@ var round = 0;
 var remainGuess = 9;
 var letters = [];
 var answer = [];
-var guessList = []
+var guessList = [];
+var letters = "";
+var a = "";
+var answers = "";
+var answerSplit = "";
 // var answerSplit = []
     console.log(wins);
     console.log(loses);
@@ -45,12 +49,6 @@ function checkGuess(y) {
             console.log(answer);
             document.getElementById("answer-text").innerHTML= answer;
         }
-
-        // if (y == letters[i]) {
-        //     var j = i * 2;
-        //     items[answer[j]] = y;
-        //     document.getElementById("answer-text").innerHTML= answer;
-        // }
     }
 }
 
@@ -61,14 +59,14 @@ window.onload = function () {
     var a = letters.length;
         console.log(a);
     // generates the number of '_' for each letter of the country
-    var answer = "_ ".repeat(a);
+    var answer = "_".repeat(a);
         console.log(answer);
     //makes the _'s as something that can be in the HTML
     document.getElementById("answer-text").innerHTML= answer;
     var answerSplit = answer.split('');
         console.log(answerSplit);
 
-};
+
 
 document.onkeyup = function(event) {
 
@@ -84,13 +82,15 @@ document.onkeyup = function(event) {
 
     //can't get below to work
     for (var i = 0; i < letters.length; i++) {
-        if (letters.indexOf(userGuess) !== -1) {
-            //var j = i * 2;
-            var answer = answer.splice(i, 1, userGuess);
-                console.log(answer);
+        if (userGuess == letters[i]) {
+            // var j = i * 2;
+            answerSplit.splice(i, 1, userGuess);
+                console.log(answerSplit);
             document.getElementById("answer-text").innerHTML= answer;
         }
     }
+
+}
 //             // for (i = 0; i < guessList.length; i++) {
 //             //     if (userGuess === guessList[i]) {
 //             //         null;
