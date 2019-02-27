@@ -29,47 +29,77 @@ function reset(x) {
     var a = letters.length;
         console.log(a);
     // generates the number of '_' for each letter of the country
-    var answer = " _".repeat(a);
+    var answer = "_ ".repeat(a);
         console.log(answer);
     //makes the _'s as something that can be in the HTML
     document.getElementById("answer-text").innerHTML= answer;
-    // var answerSplit = answer.split('');
-    //     console.log(answerSplit);
+    var answerSplit = answer.split('');
+        console.log(answerSplit);
 }
 
 function checkGuess(y) {
     for (var i = 0; i < letters.length; i++) {
-        if (y == letters[i]) {
+        if (letters.indexOf(y) != -1) {
             var j = i * 2;
             items[answer[j]] = y;
+            console.log(answer);
             document.getElementById("answer-text").innerHTML= answer;
         }
+
+        // if (y == letters[i]) {
+        //     var j = i * 2;
+        //     items[answer[j]] = y;
+        //     document.getElementById("answer-text").innerHTML= answer;
+        // }
     }
 }
 
 window.onload = function () {
-    reset(round);
+    var letters = countries[round].split('');
+        console.log(letters);
+    // defines a variable as how many letters a country has
+    var a = letters.length;
+        console.log(a);
+    // generates the number of '_' for each letter of the country
+    var answer = "_ ".repeat(a);
+        console.log(answer);
+    //makes the _'s as something that can be in the HTML
+    document.getElementById("answer-text").innerHTML= answer;
+    var answerSplit = answer.split('');
+        console.log(answerSplit);
+
 };
 
 document.onkeyup = function(event) {
 
+    //logs player's selection
     var userInput = event.key;
+    //changes selection to upper case
     var userGuess = userInput.toUpperCase();
+        console.log(userGuess)
     
+    //addes selection to list of guesses
     guessList.push(userGuess);
     document.getElementById("guess-list").innerHTML= guessList;
 
-    // checkGuess(userGuess)
-
-    // for (i = 0; i < guessList.length; i++) {
-    //     if (userGuess === guessList[i]) {
-    //         null;
-    //     }
-    //     else {
-    //         guessList.push(userGuess);
-    //         document.getElementById("guess-list").innerHTML= guessList;
-    //     }
-    // }
+    //can't get below to work
+    for (var i = 0; i < letters.length; i++) {
+        if (letters.indexOf(userGuess) !== -1) {
+            //var j = i * 2;
+            var answer = answer.splice(i, 1, userGuess);
+                console.log(answer);
+            document.getElementById("answer-text").innerHTML= answer;
+        }
+    }
+//             // for (i = 0; i < guessList.length; i++) {
+//             //     if (userGuess === guessList[i]) {
+//             //         null;
+//             //     }
+//             //     else {
+//             //         guessList.push(userGuess);
+//             //         document.getElementById("guess-list").innerHTML= guessList;
+//             //     }
+//             // }
 
 
 
