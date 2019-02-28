@@ -51,16 +51,26 @@ function check(input) {
     display = "";
 }
 
-function checkWin(display) {
-    if (display === countries[round]) {
+function checkWin(input) {
+    if (input === countries[round]) {
         wins++;
         round = round + 1;
         reset (round);
+        document.getElementById("win-lose").innerHTML = "YOU WIN!";
         document.getElementById("previous-word").innerHTML = countries[round - 1];
     }
     document.getElementById("wins").innerHTML = wins;
         console.log(round);
         // console.log(nextRound);
+}
+
+function checkLoss(input) {
+    if (input === 0) {
+        round = round + 1;
+        reset (round);
+        document.getElementById("win-lose").innerHTML = "You lost.";
+        document.getElementById("previous-word").innerHTML = countries[round - 1];
+    }
 }
 
 //GAME ACTUALLY BEGINNING
@@ -86,6 +96,8 @@ document.onkeyup = function (event) {
     checkWin(answer);
         console.log(answer);
         console.log(countries[round]);
+    
+    checkLoss(guessesRemain);
 
     //updated guess list
     document.getElementById("guess-list").innerHTML = guessList;
