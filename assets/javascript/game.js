@@ -80,12 +80,16 @@ window.onload = function () {
     reset(round);
 }
 
+document.getElementById("get-started").innerHTML = "Press any key to get started";
+
 document.onkeyup = function (event) {
 
     var userInput = event.key;
     var userGuess = userInput.toUpperCase();
         console.log(userGuess);
     
+        document.getElementById("get-started").innerHTML = "";
+
     //check to see if player has already guessed
     if (guessList.indexOf(userGuess) == -1 && acceptableAnswers.indexOf(userGuess) != -1) {
         check(userGuess);
@@ -94,10 +98,12 @@ document.onkeyup = function (event) {
     }
         console.log(guessList);
 
+    //see if you won
     checkWin(answer);
         console.log(answer);
         console.log(countries[round]);
-    
+
+    //see if you lost
     checkLoss(guessesRemain);
 
     //updated guess list
