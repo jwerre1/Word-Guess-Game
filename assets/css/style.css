@@ -23,7 +23,7 @@ h1 {
 h2 {
     font-family: 'Mogra', cursive;
     font-size: 50px;
-    color: rgba(45, 45, 252, 0.747);
+    color: rgba(116, 116, 255, 0.89);
     text-align: center;
     transform: rotate(345deg);
     z-index: 2;
@@ -33,15 +33,23 @@ h2 {
 
 .container {
     background-color: lightslategray;
-    max-width: 450px;
+    max-width: 475px;
     width: 100%;
     color: white;
     margin: 60px auto;
+    line-height: 1.25;
 
 }
 
 p {
     font-size: 30px;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: lightgreen;
 }
 
 h4 {

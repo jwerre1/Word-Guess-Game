@@ -11,6 +11,7 @@ var guessList = [];
 var wins = 0;
 var nextRound;
 var answer = ""
+var acceptableAnswers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 
 function reset(input) {
@@ -86,7 +87,7 @@ document.onkeyup = function (event) {
         console.log(userGuess);
     
     //check to see if player has already guessed
-    if (guessList.indexOf(userGuess) == -1) {
+    if (guessList.indexOf(userGuess) == -1 && acceptableAnswers.indexOf(userGuess) != -1) {
         check(userGuess);
         guessList.push(userGuess);
         guessesRemain--;
