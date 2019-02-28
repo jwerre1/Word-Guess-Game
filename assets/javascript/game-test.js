@@ -1,13 +1,16 @@
-var countries = ["USA", "CANADA", "MEXICO"];
+var countries = ["USA", "CANADA", "MEXICO", "FRANCE", "MAURITIUS", "COMOROS", "SEYCHELLES", "TUVALU", "BHUTAN"];
 var letters = "";
 var answerLength = "";
 var display = "";
 var dashes = [];
+var guessesRemain = 0;
+var round = 0; 
 var userInput = "";
 var userGuess = "";
 var guessList = [];
 var wins = 0;
-var loses = 0;
+var nextRound;
+var answer = ""
 
 
 function reset(input) {
@@ -15,6 +18,11 @@ function reset(input) {
         console.log(letters);
     answerLength = letters.length;
         console.log(answerLength);
+    guessesRemain = answerLength + 3;
+        console.log(guessesRemain);
+    document.getElementById("guesses-remaining").innerHTML=guessesRemain;
+    guessList = [];
+    document.getElementById("guess-list").innerHTML = guessList;
     
     //creates initial display of correct # of dashes
     for (i = 0; i < letters.length; i++) {
@@ -24,6 +32,7 @@ function reset(input) {
         console.log(display);
     }
     display = "";
+    document.getElementById("wins").innerHTML = wins;
 }
 
 function check(input) {
@@ -35,16 +44,29 @@ function check(input) {
         //     guessList.push(input);
         // }
         display = display + dashes[i];
+        answer = display;
         document.getElementById("answer-text").innerHTML = display;
             console.log(display);
     }
     display = "";
 }
 
+function checkWin(display) {
+    if (display === countries[round]) {
+        wins++;
+        round = round + 1;
+        reset (round);
+        document.getElementById("previous-word").innerHTML = countries[round - 1];
+    }
+    document.getElementById("wins").innerHTML = wins;
+        console.log(round);
+        // console.log(nextRound);
+}
+
 //GAME ACTUALLY BEGINNING
 
 window.onload = function () {  
-    reset(0);
+    reset(round);
 }
 
 document.onkeyup = function (event) {
@@ -53,10 +75,20 @@ document.onkeyup = function (event) {
     var userGuess = userInput.toUpperCase();
         console.log(userGuess);
     
+    //check to see if player has already guessed
     if (guessList.indexOf(userGuess) == -1) {
         check(userGuess);
         guessList.push(userGuess);
+        guessesRemain--;
     }
         console.log(guessList);
+
+    checkWin(answer);
+        console.log(answer);
+        console.log(countries[round]);
+
+    //updated guess list
     document.getElementById("guess-list").innerHTML = guessList;
+    //update number of guesses remaining
+    document.getElementById("guesses-remaining").innerHTML=guessesRemain;
 }
