@@ -7,14 +7,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    
+
+<p>Answer: <span id="answer-text"></span></p>
 
 <script>
-    var list = ["pig", "bear", "watfdsfasd"];
-    list.splice(2, 1, "qwer");
-    console.log(list);
+    // var list = ["pig ", "bear ", "watfdsfasd "];
+    // var car = ["chevy ", "audi ", "toyota "];
+    // var join = "";
+
+    // list.splice(2, 1, car[2])
+    // console.log(list)
+
+    // for (i = 0; i < list.length; i++) {
+    //     var join = join + list[i];
+    // }
+    // console.log(join)
+
+var countries = ["USA", "CANADA", "MEXICO"];
+var letters;
+var display;
+var dashesArray = "";
 
 
+// Function start(item) {
+    //splits each letter of the country in a separate part of an array
+    var letters = countries[1].split('');
+        console.log(letters);
+    var display = "";
+
+    // defines a variable as how many letters a country has - doesn't work
+    // for (i = 0; i < letters.length; i++) {
+    //     dashesArray[i] = "_ ";
+    //     var display = display + dashesArray[i];
+    //     document.getElementById("answer-text").innnerHTML = display;
+    // }
+
+    console.log(display);
+
+
+                var a = letters.length;
+                    console.log(a);
+                // generates the number of '_' for each letter of the country
+                var answer = "_ ".repeat(a);
+                    console.log(answer);
+                //makes the _'s as something that can be in the HTML
+                document.getElementById("answer-text").innerHTML= answer;
+                var answerSplit = answer.split('');
+                    console.log(answerSplit);
+
+
+// document.onkeyup = function(event) {
+
+//     //logs player's selection
+//     var userInput = event.key;
+//     //changes selection to upper case
+//     var userGuess = userInput.toUpperCase();
+//         console.log(userGuess)
+
+//     //addes selection to list of guesses
+//     guessList.push(userGuess);
+//     document.getElementById("guess-list").innerHTML= guessList;
+
+//     for (var i = 0; i < letters.length; i++) {
+//         if (userGuess == letters[i]) {
+//             // var j = i * 2;
+//             answerSplit.splice(i, 1, userGuess);
+//                 console.log(answerSplit);
+//             answer=answerSplit.join();
+//             document.getElementById("answer-text").innerHTML= answer;
+//     }
+// }
+
+// }
 
 
 </script>
