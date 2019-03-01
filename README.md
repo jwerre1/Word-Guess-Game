@@ -10,7 +10,7 @@ Before you begin, you are present with the first word. Notice that you are prese
 
 If you are able to correctly guess the word, a new set of dashes generates, the win count goes up by one, and the "guesses remaining" counter restarts. A "Yehaw" sould also plays.
 
-If you loose, a new dashes gerates and the "reamining guesses" restart, but you the win count does not increase and you hear a "Doh" sound. 
+If you loose, new dashes generates and the "reamining guesses" restart, but you the win count does not increase and you hear a "Doh" sound. 
 
 No matter if you win or loose, an new set of texts appears on the screen stating whichever situation. You can also see what the previous word was.
 
