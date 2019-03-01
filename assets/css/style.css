@@ -6,6 +6,10 @@ body {
     background-size: cover;
 }
 
+header {
+    margin-bottom: 30px;
+}
+
 h1 {
     font-family: 'Faster One', cursive;
     font-size: 75px;

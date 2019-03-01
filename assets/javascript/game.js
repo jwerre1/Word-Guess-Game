@@ -1,4 +1,4 @@
-var countries = ["USA", "CANADA", "MEXICO", "FRANCE", "MAURITIUS", "COMOROS", "SEYCHELLES", "TUVALU", "BHUTAN"];
+var countries = ["USA", "CANADA", "MEXICO", "FRANCE", "MAURITIUS", "COMOROS", "SEYCHELLES", "TUVALU", "BHUTAN", "NIUE", "BARBADOS","BELIZE","TONGA","KIRIBATI","ARUBA","MARTINIQUE","ICELAND","MAYOTTE"];
 var letters = "";
 var answerLength = "";
 var display = "";
@@ -12,7 +12,8 @@ var wins = 0;
 var nextRound;
 var answer = ""
 var acceptableAnswers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
+var winSound = new Audio("http://soundbible.com/mp3/Yahoo-SoundBible.com-1888534056.mp3");
+var loseSound = new Audio("https://www.thesoundarchive.com/simpsons/homer/doh1.mp3");
 
 function reset(input) {
     letters = countries[input].split("");
@@ -56,6 +57,7 @@ function checkWin(input) {
     if (input === countries[round]) {
         wins++;
         round = round + 1;
+        winSound.play();
         reset (round);
         document.getElementById("win-lose").innerHTML = "YOU WIN!";
         document.getElementById("previous-word").innerHTML = countries[round - 1];
@@ -68,6 +70,7 @@ function checkWin(input) {
 function checkLoss(input) {
     if (input === 0) {
         round = round + 1;
+        loseSound.play();
         reset (round);
         document.getElementById("win-lose").innerHTML = "You lost.";
         document.getElementById("previous-word").innerHTML = countries[round - 1];
